@@ -1,0 +1,39 @@
+@use "sass:string"
+
+$bg-primary: purple;
+$bg-secondary: pink;
+
+.bg {
+    background-color: $bg-primary;
+    color: $bg-secondary;
+}
+
+.menu {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            display: inline-block;
+            background-color: yellow;
+            padding: 5px 10px;
+
+            a {
+                text-decoration: none;
+                color: red;
+
+                &:hover {
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+$width : 0, 20, 25, 50, 60, 75, 100;
+@each $w in $width {
+    .w-#{$w} {
+        width: 0%;
+        width: string.unquote($w + "%");
+    }
+}
