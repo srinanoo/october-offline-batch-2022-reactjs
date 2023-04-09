@@ -11,9 +11,15 @@ class Header extends React.Component {
         //     "title": "Title",
         // }
 
-        // this.state = {
-        //     "login": false
-        // }
+        this.state = {
+            "login": false
+        }
+
+        this.changeState = this.changeState.bind(this);
+    }
+
+    changeState() {
+        this.setState({"login": true})
     }
 
     // updateChange() {
@@ -29,28 +35,39 @@ class Header extends React.Component {
     render() {
         return (
             <>
+                {this.state.login.toString()}<br />
+                {
+                    this.state.login
+                        ?
+                        <>
+                            <button onClick={() => this.setState({"login": false})}>Logout</button>
+
+                            <div className="row1">
+                                <div className="row1section1">
+                                    <div>
+                                        <img src="images/Dinesh.jpg" alt="" className="logo" />
+                                    </div>
+                                    <div>
+                                        <h3>{this.props.custom.name}</h3>
+                                        <div>{this.props.custom.id}</div>
+                                        <div>{this.props.custom.title}</div>
+                                        <div>Web Developer</div>
+                                        <div>Email Me</div>
+                                    </div>
+                                </div>
+                                <div className="row1section2 bg">
+                                    <div>Projects</div>
+                                    <div>About Me</div>
+                                    <div>Contact Me</div>
+                                </div>
+                            </div>
+                        </>
+                        :
+                        <button onClick={() => this.setState({"login": true})}>Login</button>
+                }
                 
-                            
-                <div className="row1">
-                    <div className="row1section1" id={color.bgBlue}>
-                        <div>
-                            <img src="images/Dinesh.jpg" alt="" className="logo" />
-                        </div>
-                        <div>
-                            <h3 className={color.colorRed}> {this.props.custom}</h3>
-                            <div>{this.props.id}</div>
-                            <div>{this.props["data-custom"]}</div>
-                            <div>Technical Trainer</div>
-                            <div>Web Developer</div>
-                            <div>Email Me</div>
-                        </div>
-                    </div>
-                    <div className="row1section2 bg">
-                        <div>Projects</div>
-                        <div>About Me</div>
-                        <div>Contact Me</div>
-                    </div>
-                </div>
+                
+                
                 
 
                 {/* <p>ID: {this.state.id}</p>

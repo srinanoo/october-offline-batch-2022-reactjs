@@ -3,47 +3,56 @@ import React from "react";
 class Main extends React.Component {
     constructor(props){
         super(props);
-
-        console.log(this.props);
-        console.log(this.props.data.login)
     }
     render() {
+        let mainData = [
+            {
+                "img": "images/background.jpeg",
+                "title": "Project 1 Title",
+                "description": "Project 1 Description goes here..."
+            },
+            {
+                "img": "images/background.jpeg",
+                "title": "Project 2 Title",
+                "description": "Project 2 Description goes here..."
+            },
+            {
+                "img": "images/background.jpeg",
+                "title": "Project 3 Title",
+                "description": "Project 3 Description goes here..."
+            },
+            {
+                "img": "images/background.jpeg",
+                "title": "Project 4 Title",
+                "description": "Project 4 Description goes here..."
+            },
+            {
+                "img": "images/background.jpeg",
+                "title": "Project 5 Title",
+                "description": "Project 5 Description goes here..."
+            },
+            {
+                "img": "images/background.jpeg",
+                "title": "Project 6 Title",
+                "description": "Project 6 Description goes here..."
+            }
+        ]
         return (
             <>
-                MAIN : {this.props.data.login.toString()}
                 <div className="row2">
                     <h3>Projects / Experiences</h3>
                     <div className="row2section1">
-                        <div>
-                            <img src="images/background.jpeg" alt="" /><br />
-                            Project 1<br />
-                            Project Description goes here...
-                        </div>
-                        <div>
-                            <img src="images/background.jpeg" alt="" /><br />
-                            Project 1<br />
-                            Project Description goes here...
-                        </div>
-                        <div>
-                            <img src="images/background.jpeg" alt="" /><br />
-                            Project 1<br />
-                            Project Description goes here...
-                        </div>
-                        <div>
-                            <img src="images/background.jpeg" alt="" /><br />
-                            Project 1<br />
-                            Project Description goes here...
-                        </div>
-                        <div>
-                            <img src="images/background.jpeg" alt="" /><br />
-                            Project 1<br />
-                            Project Description goes here...
-                        </div>
-                        <div>
-                            <img src="images/background.jpeg" alt="" /><br />
-                            Project 1<br />
-                            Project Description goes here...
-                        </div>
+                        {
+                            mainData.map((value, index) => {
+                                return (
+                                    <div key={index}>
+                                        <img src={value.img} alt={value.title} /><br />
+                                        {value.title}<br />
+                                        {value.description}
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
                 <div className="row3">
