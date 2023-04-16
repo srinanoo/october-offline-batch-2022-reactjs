@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "placeName": "Chennai",
+        "description": "a brief description of Chennai",
+        "img": "images/chennai.jpg",
+        "marks": {
+            "HTML": 100,
+            "CSS": 23,
+            "BS": 35,
+            "JS": 56,
+            "ReactJS": 45
+        },
+        "classes": ["Sat", "Sun"]
+    },
+    {
+        "id": 2,
+        "placeName": "Thanjavur",
+        "description": "a brief description of Thanjavur",
+        "img": "images/thanjavur.jpg"
+    }
+]

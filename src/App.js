@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 // import './styles.scss';
 // import Header from './components/clsHeader';
@@ -7,6 +7,12 @@ import Main from './components/clsMain';
 import Footer from './components/clsFooter';
 import FuncHeader from './components/fnHeader';
 import FuncAPI from './components/fnApi';
+
+import ClsCycle, {ClsCycle1, ClsCycle2, ClsCycle3} from './components/clsCycle';
+import FuncHooks from './components/fnHooks';
+
+import ClsForms from './components/clsForms';
+import FuncForms from './components/fnForms';
 
 // function App() {
 //   return (
@@ -74,11 +80,11 @@ import FuncAPI from './components/fnApi';
 
 // class App extends React.Component {
 //     render() {
-//         let obj = {
-//             "id": 1,
-//             "name": "Dinesh",
-//             "title": "Technical Trainer"
-//         }
+//         // let obj = {
+//         //     "id": 1,
+//         //     "name": "Dinesh",
+//         //     "title": "Technical Trainer"
+//         // }
 //         return (
 //             <>
 //                 <Header custom={obj} />
@@ -89,18 +95,65 @@ import FuncAPI from './components/fnApi';
 //     }
 // }
 
+// function App() {
+//     let obj = {
+//         "id": 1,
+//         "name": "Dinesh",
+//         "title": "Technical Trainer"
+//     }
+//     return (
+//         <>
+//             <FuncAPI />
+//             <FuncHeader custom={obj} />
+//             <Main />
+//             <Footer />
+//         </>
+//     )
+// }
+
+// class App extends React.Component {
+//     constructor() {
+//         super();
+//     }
+
+//     render() {
+//         let obj = {
+//             "name": "Dinesh",
+//             "title": "Technical Trainer"
+//         }
+//         return (
+//             <>
+//                 {/* <ClsCycle name="Dinesh" /> */}
+//                 <FuncHooks id="1" userData={obj} />
+//             </>
+//         )
+//     }
+// }
+
 function App() {
+    const [login, setLogin] = useState(false);
+
     let obj = {
-        "id": 1,
         "name": "Dinesh",
         "title": "Technical Trainer"
     }
     return (
         <>
-            <FuncAPI />
-            <FuncHeader custom={obj} />
-            <Main />
-            <Footer />
+            {/* Login: {login.toString()}
+            {
+                login
+                    ?
+                    <>
+                        <p><button onClick={() => setLogin(false)}>Logout</button></p>
+                        <FuncHooks id="1" userData={obj} />
+                    </>
+                    :
+                    <p><button onClick={() => setLogin(true)}>Login</button></p>
+            } */}
+
+            {/* <ClsForms /> */}
+
+            <FuncForms />
         </>
     )
 }
